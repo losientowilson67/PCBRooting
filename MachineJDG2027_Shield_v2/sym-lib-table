@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "JDG2027")(type "KiCad")(uri "${KIPRJMOD}/JDG2027.kicad_sym")(options "")(descr "Symboles projet JDG2027"))
+)

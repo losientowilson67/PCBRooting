@@ -1,0 +1,42 @@
+Comment,Designator,Footprint,LCSC Part #,MPN,Qty,Montage
+470uF 25V,C1,CP_Elec_10x10.5,,470uF 25V 10x10.5,1,CMS - assemblage JLC
+10uF 50V,"C10,C11,C17",C_1210_3225Metric,,,3,CMS - assemblage JLC
+1uF 50V,C12,C_0805_2012Metric,,,1,CMS - assemblage JLC
+10nF 50V,C13,C_0805_2012Metric,,,1,CMS - assemblage JLC
+22uF 25V,"C14,C15",C_1210_3225Metric,,,2,CMS - assemblage JLC
+220uF 16V,C16,CP_Elec_8x10.5,,220uF 16V 8x10.5,1,CMS - assemblage JLC
+100nF,"C18,C19,C24",C_0805_2012Metric,,,3,CMS - assemblage JLC
+22uF 16V,"C20,C21",C_1206_3216Metric,,,2,CMS - assemblage JLC
+75pF,C22,C_0805_2012Metric,,,1,CMS - assemblage JLC
+10uF 16V,C23,C_1206_3216Metric,,,1,CMS - assemblage JLC
+SMBJ15A,D1,D_SMB,,SMBJ15A,1,CMS - assemblage JLC
+SS54,D2,D_SMC,,SS54 (5A 40V),1,CMS - assemblage JLC
+SS34,D3,D_SMA,,SS34,1,CMS - assemblage JLC
+1N4148W,"D4,D5",D_SOD-123,,,2,CMS - assemblage JLC
+4.7uH,L1,L_Sunlord_MWSA1265S,,MWSA1265S-4R7MT,1,CMS - assemblage JLC
+15uH,L2,L_Bourns_SRN6045TA,,SRN6045TA-150M,1,CMS - assemblage JLC
+LED verte,"LED1,LED2",LED_0805_2012Metric,,,2,CMS - assemblage JLC
+MMBT3904,Q1,SOT-23,,,1,CMS - assemblage JLC
+2N7002,"Q2,Q3",SOT-23,,,2,CMS - assemblage JLC
+1k,"R1,R17,R20,R21,R23",R_0805_2012Metric,,,5,CMS - assemblage JLC
+10k,"R2,R16,R19",R_0805_2012Metric,,,3,CMS - assemblage JLC
+470k,R10,R_0805_2012Metric,,,1,CMS - assemblage JLC
+182R 1%,R11,R_0805_2012Metric,,,1,CMS - assemblage JLC
+1k 1%,R12,R_0805_2012Metric,,,1,CMS - assemblage JLC
+100k 1%,R13,R_0805_2012Metric,,,1,CMS - assemblage JLC
+12.7k 1%,R14,R_0805_2012Metric,,,1,CMS - assemblage JLC
+100R,"R15,R18",R_0805_2012Metric,,,2,CMS - assemblage JLC
+2k,R22,R_0805_2012Metric,,,1,CMS - assemblage JLC
+30k 1%,R24,R_0805_2012Metric,,,1,CMS - assemblage JLC
+10k 1%,R25,R_0805_2012Metric,,,1,CMS - assemblage JLC
+510k,R26,R_0805_2012Metric,,,1,CMS - assemblage JLC
+LM22678TJ-5.0,U2,TO-263-7_TabPin8,C527397,LM22678TJ-5.0/NOPB,1,CMS - assemblage JLC
+TPS54202H,U3,SOT-23-6,C527684,TPS54202HDDCR,1,CMS - assemblage JLC
+10A mini-lame,F1,Fuseholder_Blade_Mini_Keystone_3568,,Keystone 3568 + fusible mini-lame 10A,1,THT - soudure main
+Bornier Wurth 691214110002 (2P 3.5mm),"J1,J2,J3,J4,J5,J8,J9,J10,J11,J12,J13",691214110002,,,11,THT - soudure main
+Header male 1x03 2.54mm,"J6,S1,S2,S3,S4,S5,S6",PinHeader_1x03_P2.54mm_Vertical,,,7,THT - soudure main
+Header male 1x04 2.54mm,"J14,J15",PinHeader_1x04_P2.54mm_Vertical,,,2,THT - soudure main
+Header male 2x10 2.54mm,J16,PinHeader_2x10_P2.54mm_Vertical,,,1,THT - soudure main
+G5NB-1A-E DC5V,"K1,K2",Relay_SPST_Omron_G5NB,C48746,G5NB-1A-E-DC5V,2,THT - soudure main
+Mega 2560 PRO Embed + embases femelles 2x21, 2x16 et 2x3 (2.54mm),U1,MODULE_MEGA_PRO_EMBED_CH340G_ATMEGA2560,,Mega 2560 PRO Embed CH340G,1,THT - soudure main
+4.7k DNP,"R30,R31,R32,R33",R_0805_2012Metric,,,4,NE PAS POSER (DNP)
