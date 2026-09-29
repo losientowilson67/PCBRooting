@@ -12,7 +12,7 @@ import route as R
 
 OUT = sys.argv[1]
 PRJDIR = os.path.dirname(os.path.abspath(OUT))
-KFP = "/usr/share/kicad/footprints/"
+KFP = os.environ.get("KICAD9_FOOTPRINT_DIR", "/usr/share/kicad/footprints").rstrip("/") + "/"
 MM = pcbnew.FromMM
 NS = uuid.UUID("5a1e1d25-0000-4000-8000-000000000025")
 LAY = {"F": pcbnew.F_Cu, "B": pcbnew.B_Cu}
@@ -120,12 +120,14 @@ cls = d["net_settings"]["classes"]
 base = dict(cls[0])
 base.update(track_width=0.25, clearance=0.2, via_diameter=0.6, via_drill=0.3)
 cls[0] = base
+del cls[1:]
 for name, tw, cl in [("Alim", 0.5, 0.2), ("Puissance", 1.5, 0.3)]:
     c = dict(base); c.update(name=name, track_width=tw, clearance=cl, priority=0 if name == "Puissance" else 1)
     cls.append(c)
+# chaque net sous son nom interne ("V12") et son nom schema ("/V12", voir rename_nets.py)
 d["net_settings"]["netclass_patterns"] = [
-    {"netclass": "Alim", "pattern": p} for p in ("+5V", "5V_BUCK", "V12", "SW5")
-] + [{"netclass": "Puissance", "pattern": p} for p in ("VBAT", "VBAT_IN", "+6V", "SW6")]
+    {"netclass": "Alim", "pattern": q + p} for p in ("+5V", "5V_BUCK", "V12", "SW5") for q in ("", "/")
+] + [{"netclass": "Puissance", "pattern": q + p} for p in ("VBAT", "VBAT_IN", "+6V", "SW6") for q in ("", "/")]
 rules = d["board"]["design_settings"]["rules"]
 rules.update(min_clearance=0.2, min_track_width=0.2, min_via_diameter=0.5, min_through_hole_diameter=0.3,
              min_copper_edge_clearance=0.3, min_hole_clearance=0.25, min_hole_to_hole=0.25,

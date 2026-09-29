@@ -5,8 +5,11 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from sexp import parse, find, find1
 import design as D
 
-KLIB = "/opt/kroot/usr/share/kicad/symbols/"
-PLIB = os.path.join(os.path.dirname(os.path.abspath(__file__)), "JDG2025.kicad_sym")
+KLIB = os.environ.get("KICAD9_SYMBOL_DIR", "/usr/share/kicad/symbols").rstrip("/") + "/"
+_here = os.path.dirname(os.path.abspath(__file__))
+PLIB = next(p for p in (os.path.join(_here, "JDG2025.kicad_sym"),
+                        os.path.join(_here, "..", "MachineJDG2025_MEGA2560_Shield_v2", "JDG2025.kicad_sym"))
+            if os.path.exists(p))
 OUT = sys.argv[1]
 NS = uuid.UUID("5a1e1d25-0000-4000-8000-00000000jdg0".replace("jdg0", "0025"))
 ROOT = str(uuid.uuid5(NS, "root"))
@@ -19,6 +22,19 @@ def U(*k):
 # ---------- serialisation s-expr ----------
 def q(s):
     return '"' + str(s).replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n") + '"'
+
+
+def dump(x, ind=0):
+    if not isinstance(x, list):
+        return x
+    # atomes: on re-quote les chaines qui en ont besoin
+    parts = []
+    for i, e in enumerate(x):
+        if isinstance(e, list):
+            parts.append(None)
+        else:
+            parts.append(e)
+    return x
 
 
 def ser(node, ind=1):
@@ -43,6 +59,11 @@ def ser(node, ind=1):
 QUOTE_KEYS = {"property", "lib_id", "name", "number", "reference", "project", "path", "title", "date", "rev",
               "company", "comment", "page", "text", "label", "uuid", "generator", "generator_version", "paper",
               "symbol", "extends", "lib_name"}
+
+
+def fix_quotes(node):
+    """Marque les chaines a quoter (en les entourant d'un objet Q)."""
+    return node
 
 
 class Q(str):
@@ -75,7 +96,7 @@ def requote(node):
     for i, e in enumerate(rest):
         if isinstance(e, list):
             out.append(requote(e))
-        elif key in QUOTE_KEYS and (key != "property" or i < 2) and (key != "text" or i < 1):
+        elif key in QUOTE_KEYS and (key != "property" or i < 2) and (key != "text" or i < 1) and (key != "pin" or False):
             out.append(Q(e))
         elif key in ("name", "number") and i == 0:
             out.append(Q(e))
@@ -112,12 +133,14 @@ def get_lib_symbol(lib_id):
             if isinstance(e, list) and e[0] == "symbol":
                 e = [e[0], e[1].replace(ext[1] + "_", name + "_", 1)] + e[2:]
             body.append(e)
+        # proprietes de l'enfant d'abord, puis le reste du parent
         flat = ["symbol", lib_id]
         flags = [e for e in body if isinstance(e, list) and e[0] in ("pin_numbers", "pin_names", "exclude_from_sim", "in_bom", "on_board", "power")]
         others = [e for e in body if e not in flags]
         flat += flags + props + [e for e in others if not (isinstance(e, list) and e[0] == "extends")]
         return flat
-    return ["symbol", lib_id] + [e for e in s[2:]]
+    s2 = ["symbol", lib_id] + [e for e in s[2:]]
+    return s2
 
 
 def get_flat(syms, name):
@@ -276,6 +299,9 @@ def text(s, x, y, size=1.27, bold=False):
                   ["effects", font, ["justify", "left", "bottom"]], ["uuid", Q(U("t", s, x, y))]])
 
 
+placed_labels = set()
+
+
 def place(c):
     ref = c["ref"]
     X, Y, r = P[ref]
@@ -328,10 +354,10 @@ def place(c):
             rp, vp = (X + 5.08, Y - 1.27), (X + 5.08, Y + 1.27)
     dnp = c["extra"].get("dnp", False)
     sym = ["symbol", ["lib_id", Q(c["lib"])], ["at", fmt(X), fmt(Y), str(r)], ["unit", "1"],
-           ["exclude_from_sim", "no"], ["in_bom", "yes"], ["on_board", "yes"], ["dnp", "yes" if dnp else "no"],
+           ["exclude_from_sim", "no"], ["in_bom", "no" if dnp else "yes"], ["on_board", "yes"], ["dnp", "yes" if dnp else "no"],
            ["uuid", Q(U("sym", ref))],
            prop("Reference", ref, rp[0], rp[1], ang, justify=j),
-           prop("Value", c["value"] + (" (DNP)" if dnp else ""), vp[0], vp[1], ang, justify=j),
+           prop("Value", c["value"], vp[0], vp[1], ang, justify=j),
            prop("Footprint", c["fp"], X, Y, 0, hide=True),
            prop("Datasheet", "", X, Y, 0, hide=True),
            prop("Description", "", X, Y, 0, hide=True)]
