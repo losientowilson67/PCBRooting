@@ -1,0 +1,90 @@
+# Shield JDG2025 v1.1 : protections et passage en CMS
+
+Révision du schéma `MachineJDG2025_MEGA2560_Shield_VL_2024_12_19` (KiCad 10). Le mapping des moteurs, des servos et du SBUS ne change pas. **Le PCB n'a pas été modifié** : le `.kicad_pcb` de ce dossier est ton fichier `_bu` tel quel.
+
+## Changements dans le schéma
+
+| Bloc | Changement |
+|---|---|
+| Entrée 12 V | J1 devient un **XT60PW-M** (broche 1 = −, broche 2 = +). Il est suivi de **Q2 AOD4185** (anti-inversion : D côté batterie, S côté 12V), de **D1 BZT52C15** + **R7 47k** sur la grille, de la **TVS D2 SMBJ14A** et de **C1 470 µF 35 V**. Le fusible de 15 A est en ligne sur le fil de batterie, hors PCB. |
+| Régulateurs | U2 et U3 deviennent des **modules XL4016** (empreinte `JDG_Protection:XL4016_Module_Wired`, reliés par fils). Leurs sorties portent maintenant `6V_MOD` et `5V_AUX_MOD`. |
+| Rail servos 6 V | U2 → **F1** (porte-fusible mini-lame, fusible de 10 A) → `6V`, avec **D3 SMBJ6.5A** et **C2 1000 µF 10 V**. |
+| Sortie 5V_AUX | U3 → **F2** (fusible de 3 A) → `5V_AUX` → J7, avec **D4 SMBJ5.0A** et **C3 470 µF 10 V**. |
+| Inverseur SBUS | Q1 devient un **MMBT3904 SOT-23** (nouveau symbole, brochage 1 = B, 2 = E, 3 = C). R1 et R2 passent en **0805**. |
+| Signaux servos | **R3–R6 330 Ω 0805** entre D10/D12/D13/D11 et S1–S4 (nouveaux nets `SRV_S1` à `SRV_S4`). |
+| Fixation | **H1–H8** : trous M3 pour les entretoises des modules (H1–H4 pour U2, H5–H8 pour U3). |
+
+Chaque pièce CMS a un champ `LCSC` rempli. J1, Q1, R1, R2, U2 et U3 gardent leur UUID, ce qui permet à la mise à jour du PCB de remplacer leurs empreintes au lieu de créer des doublons.
+
+## Fichiers
+
+| Fichier | Rôle |
+|---|---|
+| `*.kicad_sch` | Schéma modifié |
+| `*.kicad_pro` | Projet, avec 3 classes de nets ajoutées : `Puissance_12V` (BAT+, 12V) 2,5 mm, `Rail_6V` 2,5 mm, `Rail_5V_AUX` 1,5 mm |
+| `*.kicad_pcb` | Ton PCB `_bu`, non modifié |
+| `JDG_Protection.pretty/`, `fp-lib-table` | Empreinte du module XL4016 et déclaration de la librairie projet |
+| `Schema_v1.1_Protection.pdf` | Schéma en PDF |
+| `BOM_JLCPCB_CMS.csv` | Pièces CMS à faire assembler par JLCPCB |
+| `Pieces_a_souder_main.csv` | Nouvelles pièces à souder toi-même |
+
+Pour réutiliser ton propre dossier de projet, copie le `.kicad_sch` et `JDG_Protection.pretty/`. Ajoute ensuite la librairie : Préférences → Gérer les librairies d'empreintes → onglet Projet, nom `JDG_Protection`, chemin `${KIPRJMOD}/JDG_Protection.pretty`. Si tu as déjà un `fp-lib-table` dans ton projet, ne l'écrase pas : ajoute seulement cette ligne.
+
+## Mettre à jour le PCB (à faire par toi)
+
+1. **F8** (Mettre à jour le PCB depuis le schéma). Coche l'option qui remplace les empreintes par celles des symboles (*Replace footprints with those specified by symbols*). J1, Q1, R1, R2, U2 et U3 changent d'empreinte. U3 et J7 arrivent aussi, puisqu'ils manquaient dans le `_bu`.
+2. **Mesure ton module XL4016** : dimensions, entraxe des trous, position des borniers IN/OUT. L'empreinte suppose ~65 × 47 mm avec IN à gauche et OUT à droite. Place ensuite H1–H4 et H5–H8 sur les trous réels.
+3. **Agrandis la carte** : les deux modules font chacun ~65 × 47 mm et 22–27 mm de haut.
+4. **Placement** :
+   - J1 → Q2 → D2/C1 au plus court ;
+   - F1/D3/C2 près de S1–S4, F2/D4/C3 près de J7 ;
+   - R3–R6 près du Mega ;
+   - Q1/R1/R2 peuvent rester sous le Mega.
+5. **Routage** :
+   - 12 V de J1 jusqu'à l'embranchement : zone ou piste d'au moins 6 mm (≈11 A en pointe, 1 oz) ;
+   - 6 V : au moins 3,5 mm ou une zone ;
+   - 5V_AUX : au moins 1,5 mm ;
+   - grande surface de cuivre sous la languette de Q2 ;
+   - TVS et condos collés sur leur nœud, avec un GND court et plusieurs vias vers le plan ;
+   - plan GND continu entre J1, les modules et les servos.
+6. **DRC**, puis génère les Gerbers.
+
+## Réglage des XL4016 (avant de les brancher sur le shield)
+
+1. Alimente le module en 12 V, sans charge. Règle le pot **CV** au multimètre : **6,0 V** pour U2, **5,0 V** pour U3.
+2. Règle le pot **CC** en court-circuitant brièvement la sortie à travers le multimètre (calibre 10 A) : **~8 A** pour U2, **~2,5 A** pour U3. Le 2,5 A reste sous le fusible F2 de 3 A : une surcharge est limitée par le module, et F2 ne saute que si le module lâche.
+
+## Commande JLCPCB
+
+- **BOM** : `BOM_JLCPCB_CMS.csv` (13 lignes, 16 pièces).
+- **CPL** : à générer depuis le PCB une fois le placement fait (Fichier → Fabrication → Fichier de position, en CSV, face avant). Le plugin Fabrication Toolkit lit aussi les champs `LCSC` du schéma.
+- **Avant de commander** : vérifie le stock de chaque numéro LCSC. Les pièces « Extended » ajoutent des frais par référence. MMBT3904 (C20526) et les résistances UNI-ROYAL sont des pièces courantes.
+- Les pièces traversantes (THT) sont à souder à la main : voir la liste ci-dessous.
+
+## Pièces à souder à la main
+
+**Nouvelles pièces :**
+
+| Repère | Pièce | Qté |
+|---|---|---|
+| J1 | XT60PW-M (Amass), mâle, PCB horizontal | 1 |
+| F1, F2 | Porte-fusible mini-lame Keystone 3568 | 2 |
+| — | Fusibles mini-lame 10 A (F1) et 3 A (F2), avec rechanges | 2 + 2 |
+| U2, U3 | Modules XL4016 8 A (+1 de rechange) | 3 |
+| H1–H8 | Entretoises M3 10 mm + vis M3 × 6 | 8 + 16 |
+| — | Fil silicone 14 AWG rouge/noir (module ↔ pastilles) | 8 fils |
+| — | Porte-fusible mini-lame en ligne + fusible 15 A (fil batterie) | 1 |
+
+**Pièces conservées :** J2–J5, J6, S1–S4, J7 et U1 (Mega).
+
+**Pièces retirées :** bornier Würth de J1, R1/R2 axiales, 2N2222A, modules LM2596.
+
+## ERC
+
+Il ne reste que les avertissements déjà présents dans le schéma d'origine :
+
+- broches du Mega non utilisées (étiquettes isolées) ;
+- « power pin not driven », normal avec des alimentations externes ;
+- un bout de fil de 1,27 mm près du GND du Mega.
+
+Les avertissements de librairie disparaissent quand le projet est ouvert avec tes librairies installées.
