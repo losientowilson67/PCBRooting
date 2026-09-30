@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "JDG2025")(type "KiCad")(uri "${KIPRJMOD}/JDG2025.pretty")(options "")(descr "Empreintes projet JDG2025"))
+)
