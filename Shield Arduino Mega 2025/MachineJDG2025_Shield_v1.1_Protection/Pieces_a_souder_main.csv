@@ -2,6 +2,7 @@ Repere,Piece,Quantite,Ou,Remarque
 J1,Connecteur XT60PW-M (Amass) male PCB horizontal 30 A,1,PCB,"Remplace le bornier Wurth. Broche 1 = -; broche 2 = +"
 F1,Porte-fusible mini-lame Keystone 3568,1,PCB,Rail servos 6 V
 F2,Porte-fusible mini-lame Keystone 3568,1,PCB,Sortie 5V_AUX
+S5 S6,Embase femelle 1x3 2.54 mm Samtec SSW-103-01-F-D (comme S1-S4),2,PCB,Servos 5 et 6 (signaux D44 et D45)
 -,Fusible mini-lame (ATM) 10 A,2,Dans F1,1 installe + 1 de rechange
 -,Fusible mini-lame (ATM) 3 A,2,Dans F2,1 installe + 1 de rechange
 U2 U3,Module buck XL4016 8 A (pots CV + CC),3,Sur entretoises,2 installes + 1 de rechange. Remplacent les LM2596

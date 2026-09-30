@@ -13199,9 +13199,9 @@
 		)
 		(uuid "7bac1bde-b783-5b71-8290-062578f67cba")
 	)
-	(text "RÉSISTANCES SÉRIE DES SIGNAUX SERVOS (protègent les sorties du Mega)"
+	(text "RÉSISTANCES SÉRIE SERVOS (protègent le Mega)"
 		(exclude_from_sim no)
-		(at 15.24 153.67 0)
+		(at 58.42 153.67 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -13213,7 +13213,7 @@
 	)
 	(global_label "D10"
 		(shape input)
-		(at 27.94 158.75 180)
+		(at 66.04 158.75 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13223,7 +13223,7 @@
 		)
 		(uuid "3c5d9d2b-0950-5c26-a7af-efadca7a0582")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 27.94 158.75 0)
+			(at 66.04 158.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13237,7 +13237,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 158.75) (xy 29.21 158.75)
+			(xy 66.04 158.75) (xy 67.31 158.75)
 		)
 		(stroke
 			(width 0)
@@ -13247,7 +13247,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 33.02 158.75 90)
+		(at 71.12 158.75 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13257,7 +13257,7 @@
 		(dnp no)
 		(uuid "ed0300d4-b087-5900-9c32-361ff2441b48")
 		(property "Reference" "R3"
-			(at 33.02 156.21 270)
+			(at 71.12 156.21 270)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13267,7 +13267,7 @@
 			)
 		)
 		(property "Value" "330"
-			(at 33.02 161.29 270)
+			(at 71.12 158.75 270)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13277,7 +13277,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 33.02 158.75 270)
+			(at 71.12 158.75 270)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13288,7 +13288,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 33.02 158.75 270)
+			(at 71.12 158.75 270)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13299,7 +13299,7 @@
 			)
 		)
 		(property "Description" "Résistance"
-			(at 33.02 158.75 270)
+			(at 71.12 158.75 270)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13310,7 +13310,7 @@
 			)
 		)
 		(property "LCSC" "C17630"
-			(at 33.02 158.75 270)
+			(at 71.12 158.75 270)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13337,7 +13337,7 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 158.75) (xy 38.1 158.75)
+			(xy 74.93 158.75) (xy 76.2 158.75)
 		)
 		(stroke
 			(width 0)
@@ -13347,7 +13347,7 @@
 	)
 	(global_label "SRV_S1"
 		(shape output)
-		(at 38.1 158.75 0)
+		(at 76.2 158.75 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13357,7 +13357,7 @@
 		)
 		(uuid "3d44a1b0-69c0-56aa-b3c6-33061a8b0e50")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 38.1 158.75 0)
+			(at 76.2 158.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13371,7 +13371,7 @@
 	)
 	(global_label "D12"
 		(shape input)
-		(at 27.94 166.37 180)
+		(at 66.04 165.1 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13381,7 +13381,7 @@
 		)
 		(uuid "f67d4919-5b53-5fd7-8e26-a30ad8163686")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 27.94 166.37 0)
+			(at 66.04 165.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13395,7 +13395,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 166.37) (xy 29.21 166.37)
+			(xy 66.04 165.1) (xy 67.31 165.1)
 		)
 		(stroke
 			(width 0)
@@ -13405,7 +13405,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 33.02 166.37 90)
+		(at 71.12 165.1 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13415,7 +13415,7 @@
 		(dnp no)
 		(uuid "89eba4a2-f5cc-53cc-b86f-d6585aaa1802")
 		(property "Reference" "R4"
-			(at 33.02 163.83 270)
+			(at 71.12 162.56 270)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13425,7 +13425,7 @@
 			)
 		)
 		(property "Value" "330"
-			(at 33.02 168.91 270)
+			(at 71.12 165.1 270)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13435,7 +13435,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 33.02 166.37 270)
+			(at 71.12 165.1 270)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13446,7 +13446,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 33.02 166.37 270)
+			(at 71.12 165.1 270)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13457,7 +13457,7 @@
 			)
 		)
 		(property "Description" "Résistance"
-			(at 33.02 166.37 270)
+			(at 71.12 165.1 270)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13468,7 +13468,7 @@
 			)
 		)
 		(property "LCSC" "C17630"
-			(at 33.02 166.37 270)
+			(at 71.12 165.1 270)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13495,7 +13495,7 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 166.37) (xy 38.1 166.37)
+			(xy 74.93 165.1) (xy 76.2 165.1)
 		)
 		(stroke
 			(width 0)
@@ -13505,7 +13505,7 @@
 	)
 	(global_label "SRV_S2"
 		(shape output)
-		(at 38.1 166.37 0)
+		(at 76.2 165.1 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13515,7 +13515,7 @@
 		)
 		(uuid "38f31f36-8225-5b06-800a-ea3600d4b494")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 38.1 166.37 0)
+			(at 76.2 165.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13529,7 +13529,7 @@
 	)
 	(global_label "D13"
 		(shape input)
-		(at 27.94 173.99 180)
+		(at 66.04 171.45 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13539,7 +13539,7 @@
 		)
 		(uuid "9f14a76c-d33c-5bf9-be22-e1d6a62cde1f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 27.94 173.99 0)
+			(at 66.04 171.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13553,7 +13553,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 173.99) (xy 29.21 173.99)
+			(xy 66.04 171.45) (xy 67.31 171.45)
 		)
 		(stroke
 			(width 0)
@@ -13563,7 +13563,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 33.02 173.99 90)
+		(at 71.12 171.45 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13573,7 +13573,7 @@
 		(dnp no)
 		(uuid "1939a47b-c5e4-5781-9737-36e80af640ba")
 		(property "Reference" "R5"
-			(at 33.02 171.45 270)
+			(at 71.12 168.91 270)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13583,7 +13583,7 @@
 			)
 		)
 		(property "Value" "330"
-			(at 33.02 176.53 270)
+			(at 71.12 171.45 270)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13593,7 +13593,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 33.02 173.99 270)
+			(at 71.12 171.45 270)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13604,7 +13604,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 33.02 173.99 270)
+			(at 71.12 171.45 270)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13615,7 +13615,7 @@
 			)
 		)
 		(property "Description" "Résistance"
-			(at 33.02 173.99 270)
+			(at 71.12 171.45 270)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13626,7 +13626,7 @@
 			)
 		)
 		(property "LCSC" "C17630"
-			(at 33.02 173.99 270)
+			(at 71.12 171.45 270)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13653,7 +13653,7 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 173.99) (xy 38.1 173.99)
+			(xy 74.93 171.45) (xy 76.2 171.45)
 		)
 		(stroke
 			(width 0)
@@ -13663,7 +13663,7 @@
 	)
 	(global_label "SRV_S3"
 		(shape output)
-		(at 38.1 173.99 0)
+		(at 76.2 171.45 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13673,7 +13673,7 @@
 		)
 		(uuid "50bcc52b-d3f6-5e47-a0c9-4c9585f57d44")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 38.1 173.99 0)
+			(at 76.2 171.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13687,7 +13687,7 @@
 	)
 	(global_label "D11"
 		(shape input)
-		(at 27.94 181.61 180)
+		(at 66.04 177.8 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13697,7 +13697,7 @@
 		)
 		(uuid "b792234f-0087-5b9a-90e4-5a83ca670863")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 27.94 181.61 0)
+			(at 66.04 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13711,7 +13711,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 181.61) (xy 29.21 181.61)
+			(xy 66.04 177.8) (xy 67.31 177.8)
 		)
 		(stroke
 			(width 0)
@@ -13721,7 +13721,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 33.02 181.61 90)
+		(at 71.12 177.8 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13731,7 +13731,7 @@
 		(dnp no)
 		(uuid "95eda7fa-d386-5952-b96c-94f02e416e1c")
 		(property "Reference" "R6"
-			(at 33.02 179.07 270)
+			(at 71.12 175.26 270)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13741,7 +13741,7 @@
 			)
 		)
 		(property "Value" "330"
-			(at 33.02 184.15 270)
+			(at 71.12 177.8 270)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13751,7 +13751,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 33.02 181.61 270)
+			(at 71.12 177.8 270)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13762,7 +13762,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 33.02 181.61 270)
+			(at 71.12 177.8 270)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13773,7 +13773,7 @@
 			)
 		)
 		(property "Description" "Résistance"
-			(at 33.02 181.61 270)
+			(at 71.12 177.8 270)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13784,7 +13784,7 @@
 			)
 		)
 		(property "LCSC" "C17630"
-			(at 33.02 181.61 270)
+			(at 71.12 177.8 270)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13811,7 +13811,7 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 181.61) (xy 38.1 181.61)
+			(xy 74.93 177.8) (xy 76.2 177.8)
 		)
 		(stroke
 			(width 0)
@@ -13821,7 +13821,7 @@
 	)
 	(global_label "SRV_S4"
 		(shape output)
-		(at 38.1 181.61 0)
+		(at 76.2 177.8 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13831,7 +13831,7 @@
 		)
 		(uuid "1d5e5c6a-f2f5-5d08-a669-82d966669c37")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 38.1 181.61 0)
+			(at 76.2 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13845,7 +13845,7 @@
 	)
 	(text "TROUS M3 : H1-H4 pour U2, H5-H8 pour U3 (placer d'après ton module)"
 		(exclude_from_sim no)
-		(at 83.82 172.72 0)
+		(at 99.06 182.88 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -13857,7 +13857,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 86.36 180.34 0)
+		(at 101.6 187.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13867,7 +13867,7 @@
 		(dnp no)
 		(uuid "9a2ef3c7-8769-5ace-9a6b-2460b12ccd41")
 		(property "Reference" "H1"
-			(at 88.9 179.705 0)
+			(at 104.14 187.325 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13878,7 +13878,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 88.9 181.61 0)
+			(at 104.14 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13890,7 +13890,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 86.36 180.34 0)
+			(at 101.6 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13901,7 +13901,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 86.36 180.34 0)
+			(at 101.6 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13912,7 +13912,7 @@
 			)
 		)
 		(property "Description" "Trou de fixation M3"
-			(at 86.36 180.34 0)
+			(at 101.6 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13933,7 +13933,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 96.52 180.34 0)
+		(at 110.49 187.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13943,7 +13943,7 @@
 		(dnp no)
 		(uuid "c73d1438-f6d2-5ce2-b2fb-e99e82722d92")
 		(property "Reference" "H2"
-			(at 99.06 179.705 0)
+			(at 113.03 187.325 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13954,7 +13954,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 99.06 181.61 0)
+			(at 113.03 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13966,7 +13966,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 96.52 180.34 0)
+			(at 110.49 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13977,7 +13977,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 180.34 0)
+			(at 110.49 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13988,7 +13988,7 @@
 			)
 		)
 		(property "Description" "Trou de fixation M3"
-			(at 96.52 180.34 0)
+			(at 110.49 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14009,7 +14009,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 106.68 180.34 0)
+		(at 119.38 187.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14019,7 +14019,7 @@
 		(dnp no)
 		(uuid "70669522-7eeb-5630-b268-a86bbbb8c2a8")
 		(property "Reference" "H3"
-			(at 109.22 179.705 0)
+			(at 121.92 187.325 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14030,7 +14030,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 109.22 181.61 0)
+			(at 121.92 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14042,7 +14042,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 106.68 180.34 0)
+			(at 119.38 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14053,7 +14053,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 106.68 180.34 0)
+			(at 119.38 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14064,7 +14064,7 @@
 			)
 		)
 		(property "Description" "Trou de fixation M3"
-			(at 106.68 180.34 0)
+			(at 119.38 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14085,7 +14085,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 116.84 180.34 0)
+		(at 128.27 187.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14095,7 +14095,7 @@
 		(dnp no)
 		(uuid "df343604-0938-5eb5-9a8a-5d8312631944")
 		(property "Reference" "H4"
-			(at 119.38 179.705 0)
+			(at 130.81 187.325 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14106,7 +14106,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 119.38 181.61 0)
+			(at 130.81 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14118,7 +14118,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 116.84 180.34 0)
+			(at 128.27 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14129,7 +14129,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 116.84 180.34 0)
+			(at 128.27 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14140,7 +14140,7 @@
 			)
 		)
 		(property "Description" "Trou de fixation M3"
-			(at 116.84 180.34 0)
+			(at 128.27 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14161,7 +14161,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 127 180.34 0)
+		(at 137.16 187.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14171,7 +14171,7 @@
 		(dnp no)
 		(uuid "5e47f4d5-06af-5358-8651-7f214ccce3c3")
 		(property "Reference" "H5"
-			(at 129.54 179.705 0)
+			(at 139.7 187.325 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14182,7 +14182,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 129.54 181.61 0)
+			(at 139.7 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14194,7 +14194,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 127 180.34 0)
+			(at 137.16 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14205,7 +14205,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 127 180.34 0)
+			(at 137.16 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14216,7 +14216,7 @@
 			)
 		)
 		(property "Description" "Trou de fixation M3"
-			(at 127 180.34 0)
+			(at 137.16 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14237,7 +14237,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 137.16 180.34 0)
+		(at 146.05 187.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14247,7 +14247,7 @@
 		(dnp no)
 		(uuid "79bdc317-3f21-5ace-aa23-59cc8c9c9af0")
 		(property "Reference" "H6"
-			(at 139.7 179.705 0)
+			(at 148.59 187.325 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14258,7 +14258,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 139.7 181.61 0)
+			(at 148.59 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14270,7 +14270,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 137.16 180.34 0)
+			(at 146.05 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14281,7 +14281,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 137.16 180.34 0)
+			(at 146.05 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14292,7 +14292,7 @@
 			)
 		)
 		(property "Description" "Trou de fixation M3"
-			(at 137.16 180.34 0)
+			(at 146.05 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14313,7 +14313,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 147.32 180.34 0)
+		(at 154.94 187.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14323,7 +14323,7 @@
 		(dnp no)
 		(uuid "c6cac3c0-f45a-5e0d-a15a-28284ade7c8a")
 		(property "Reference" "H7"
-			(at 149.86 179.705 0)
+			(at 157.48 187.325 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14334,7 +14334,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 149.86 181.61 0)
+			(at 157.48 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14346,7 +14346,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 147.32 180.34 0)
+			(at 154.94 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14357,7 +14357,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 147.32 180.34 0)
+			(at 154.94 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14368,7 +14368,7 @@
 			)
 		)
 		(property "Description" "Trou de fixation M3"
-			(at 147.32 180.34 0)
+			(at 154.94 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14389,7 +14389,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 157.48 180.34 0)
+		(at 163.83 187.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14399,7 +14399,7 @@
 		(dnp no)
 		(uuid "064d15ad-6dd7-5804-8691-6f4386399cdc")
 		(property "Reference" "H8"
-			(at 160.02 179.705 0)
+			(at 166.37 187.325 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14410,7 +14410,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 160.02 181.61 0)
+			(at 166.37 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14422,7 +14422,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 157.48 180.34 0)
+			(at 163.83 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14433,7 +14433,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 157.48 180.34 0)
+			(at 163.83 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14444,7 +14444,7 @@
 			)
 		)
 		(property "Description" "Trou de fixation M3"
-			(at 157.48 180.34 0)
+			(at 163.83 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14462,6 +14462,738 @@
 				)
 			)
 		)
+	)
+	(global_label "D44"
+		(shape input)
+		(at 66.04 184.15 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b8124cfe-9c64-54fc-b8aa-f6b54b1bc1d8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 66.04 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 66.04 184.15) (xy 67.31 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45864277-ce67-5244-8c8b-fdbcb7d47c86")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 71.12 184.15 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "cc45688d-faa5-5fe9-9307-bcf1070e0273")
+		(property "Reference" "R8"
+			(at 71.12 181.61 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "330"
+			(at 71.12 184.15 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 71.12 184.15 270)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 184.15 270)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Résistance"
+			(at 71.12 184.15 270)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C17630"
+			(at 71.12 184.15 270)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3ceb9d09-46b9-58c7-bbfb-2dca8dffe1b0")
+		)
+		(pin "2"
+			(uuid "41af30be-2ec6-5901-8a56-ccbbf221ee75")
+		)
+		(instances
+			(project "MachineJDG2025_MEGA2560_Shield_VL_2024_12_19"
+				(path "/ca4c5e41-783d-4dac-be4c-ee29947b67b2"
+					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 74.93 184.15) (xy 76.2 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "53851ff6-1d62-5713-ab41-b12f607bdb3f")
+	)
+	(global_label "SRV_S5"
+		(shape output)
+		(at 76.2 184.15 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3f3932cb-1fe3-547c-8b31-71a1caf84844")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 76.2 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "D45"
+		(shape input)
+		(at 66.04 190.5 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "809084c5-ab09-5074-8445-09ea6c2b26e2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 66.04 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 66.04 190.5) (xy 67.31 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f2e5f88-303e-52e2-b923-904201881879")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 71.12 190.5 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "780d5a13-c894-512b-b20e-1e8b1c73b9d7")
+		(property "Reference" "R9"
+			(at 71.12 187.96 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "330"
+			(at 71.12 190.5 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 71.12 190.5 270)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 190.5 270)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Résistance"
+			(at 71.12 190.5 270)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C17630"
+			(at 71.12 190.5 270)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "52eb4ed2-ebcb-56be-b224-424cf3d99581")
+		)
+		(pin "2"
+			(uuid "35101d29-c3ec-55f1-8ba9-a74523adea15")
+		)
+		(instances
+			(project "MachineJDG2025_MEGA2560_Shield_VL_2024_12_19"
+				(path "/ca4c5e41-783d-4dac-be4c-ee29947b67b2"
+					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 74.93 190.5) (xy 76.2 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4352e61-4ff3-53ae-ab20-3ffbb57d67b0")
+	)
+	(global_label "SRV_S6"
+		(shape output)
+		(at 76.2 190.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3b7968d8-0217-53c2-acdb-a0b2e0c11367")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 76.2 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SSW-103-01-F-D:SSW-103-01-F-D_3X1")
+		(at 25.4 157.48 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "79bef9ae-fb6c-51e9-88c6-93c7adf298d5")
+		(property "Reference" "S5"
+			(at 30.226 147.574 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SSW-103-01-F-D"
+			(at 37.846 150.368 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "KiCad_Symbol_Custom:SAMTEC_SSW-103-01-F-D_3X1"
+			(at 25.4 157.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 157.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 25.4 157.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" "R"
+			(at 25.4 157.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 25.4 157.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MANUFACTURER" "Samtec"
+			(at 25.4 157.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(pin "01"
+			(uuid "5100d3df-0413-5bdd-a2b4-87f767ef9289")
+		)
+		(pin "03"
+			(uuid "97e6c036-fa17-5b36-a948-146781ce9f0b")
+		)
+		(pin "02"
+			(uuid "2c8e3705-9955-58ef-b1dd-232054082f29")
+		)
+		(instances
+			(project "MachineJDG2025_MEGA2560_Shield_VL_2024_12_19"
+				(path "/ca4c5e41-783d-4dac-be4c-ee29947b67b2"
+					(reference "S5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 38.1 154.94) (xy 49.53 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7822ca7f-16a9-5c8d-9332-8410adf7b5d4")
+	)
+	(wire
+		(pts
+			(xy 38.1 157.48) (xy 52.07 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b1c5e1a-8c60-56e2-a0e8-850e3e18c996")
+	)
+	(wire
+		(pts
+			(xy 38.1 160.02) (xy 39.37 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e072038-f89d-5cd4-bc21-9e106884bee3")
+	)
+	(global_label "SRV_S5"
+		(shape output)
+		(at 39.37 160.02 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "10bd1994-6dc7-52fe-acfc-47aed2157047")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SSW-103-01-F-D:SSW-103-01-F-D_3X1")
+		(at 25.4 175.26 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8be669df-e169-59aa-86cc-7733a462a8a8")
+		(property "Reference" "S6"
+			(at 30.226 165.354 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SSW-103-01-F-D"
+			(at 37.846 168.148 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "KiCad_Symbol_Custom:SAMTEC_SSW-103-01-F-D_3X1"
+			(at 25.4 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 25.4 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" "R"
+			(at 25.4 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 25.4 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MANUFACTURER" "Samtec"
+			(at 25.4 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(pin "01"
+			(uuid "f2b70483-2a39-5a53-b4fd-cce4ae267c80")
+		)
+		(pin "03"
+			(uuid "6152190b-50f9-5d9a-a7c7-9c0e3126219e")
+		)
+		(pin "02"
+			(uuid "7c6c31cf-ae29-5094-b908-cd710fa835d1")
+		)
+		(instances
+			(project "MachineJDG2025_MEGA2560_Shield_VL_2024_12_19"
+				(path "/ca4c5e41-783d-4dac-be4c-ee29947b67b2"
+					(reference "S6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 38.1 172.72) (xy 49.53 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bcb49b7e-cac9-595d-9ab4-98696d5171e3")
+	)
+	(wire
+		(pts
+			(xy 38.1 175.26) (xy 52.07 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "132a34c8-8e88-5995-a568-765bc648af45")
+	)
+	(wire
+		(pts
+			(xy 38.1 177.8) (xy 39.37 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d01a55c3-2011-5b03-b26c-93a4d4587350")
+	)
+	(global_label "SRV_S6"
+		(shape output)
+		(at 39.37 177.8 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "11fa9e40-d977-5d4f-89a8-3eeed8c4be55")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 49.53 137.16) (xy 49.53 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9ceeac0-208e-59a2-b853-3378a4292663")
+	)
+	(wire
+		(pts
+			(xy 49.53 154.94) (xy 49.53 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e03da3ee-73e5-5fb5-b847-62122031aa06")
+	)
+	(wire
+		(pts
+			(xy 52.07 139.7) (xy 52.07 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ddfd338-b2d3-57ad-b95a-45f0da5b4e96")
+	)
+	(wire
+		(pts
+			(xy 52.07 157.48) (xy 52.07 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a328b4a-ec34-5987-a7e1-d7878358f9e0")
+	)
+	(junction
+		(at 49.53 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2cb1eb2d-40ca-5e24-b462-6f282f91947a")
+	)
+	(junction
+		(at 49.53 154.94)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fa986be0-d1dc-5dd7-b74a-a50719828509")
+	)
+	(junction
+		(at 52.07 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a0ac1364-db50-5f4c-bc81-402084fd6cee")
+	)
+	(junction
+		(at 52.07 157.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f23fc755-ce19-5152-9ee8-6a9a61c615ba")
 	)
 	(sheet_instances
 		(path "/"

@@ -1,6 +1,6 @@
 # Shield JDG2025 v1.1 : protections et passage en CMS
 
-Révision du schéma `MachineJDG2025_MEGA2560_Shield_VL_2024_12_19` (KiCad 10). Le mapping des moteurs, des servos et du SBUS ne change pas. **Le PCB n'a pas été modifié** : le `.kicad_pcb` de ce dossier est ton fichier `_bu` tel quel.
+Révision du schéma `MachineJDG2025_MEGA2560_Shield_VL_2024_12_19` (KiCad 10). Le mapping des moteurs, des servos S1–S4 et du SBUS ne change pas ; deux servos (S5, S6) sont ajoutés. **Le PCB n'a pas été modifié** : le `.kicad_pcb` de ce dossier est ton fichier `_bu` tel quel.
 
 ## Changements dans le schéma
 
@@ -11,8 +11,15 @@ Révision du schéma `MachineJDG2025_MEGA2560_Shield_VL_2024_12_19` (KiCad 10). 
 | Rail servos 6 V | U2 → **F1** (porte-fusible mini-lame, fusible de 10 A) → `6V`, avec **D3 SMBJ6.5A** et **C2 1000 µF 10 V**. |
 | Sortie 5V_AUX | U3 → **F2** (fusible de 3 A) → `5V_AUX` → J7, avec **D4 SMBJ5.0A** et **C3 470 µF 10 V**. |
 | Inverseur SBUS | Q1 devient un **MMBT3904 SOT-23** (nouveau symbole, brochage 1 = B, 2 = E, 3 = C). R1 et R2 passent en **0805**. |
-| Signaux servos | **R3–R6 330 Ω 0805** entre D10/D12/D13/D11 et S1–S4 (nouveaux nets `SRV_S1` à `SRV_S4`). |
+| Servos S5 et S6 | Deux embases **S5 (D44)** et **S6 (D45)**, identiques à S1–S4, sur le rail 6 V protégé (même bus GND/6V). |
+| Signaux servos | **R3–R6, R8, R9 330 Ω 0805** en série entre le Mega et S1–S6 (nouveaux nets `SRV_S1` à `SRV_S6`). |
 | Fixation | **H1–H8** : trous M3 pour les entretoises des modules (H1–H4 pour U2, H5–H8 pour U3). |
+
+| Servo | S1 | S2 | S3 | S4 | S5 | S6 |
+|---|---|---|---|---|---|---|
+| Broche Mega | D10 | D12 | D13 | D11 | D44 | D45 |
+
+Jusqu'à 12 servos, la librairie `Servo` du Mega n'utilise que le Timer5, celui qui gère aussi le PWM de D44–D46. Ici D44 et D45 servent justement aux servos, et le PWM des moteurs (D2, D3, D5 sur le Timer3, D6 sur le Timer4) n'est pas touché.
 
 Chaque pièce CMS a un champ `LCSC` rempli. J1, Q1, R1, R2, U2 et U3 gardent leur UUID, ce qui permet à la mise à jour du PCB de remplacer leurs empreintes au lieu de créer des doublons.
 
@@ -32,17 +39,18 @@ Pour réutiliser ton propre dossier de projet, copie le `.kicad_sch` et `JDG_Pro
 
 ## Mettre à jour le PCB (à faire par toi)
 
-1. **F8** (Mettre à jour le PCB depuis le schéma). Coche l'option qui remplace les empreintes par celles des symboles (*Replace footprints with those specified by symbols*). J1, Q1, R1, R2, U2 et U3 changent d'empreinte. U3 et J7 arrivent aussi, puisqu'ils manquaient dans le `_bu`.
+1. **F8** (Mettre à jour le PCB depuis le schéma). Coche l'option qui remplace les empreintes par celles des symboles (*Replace footprints with those specified by symbols*). J1, Q1, R1, R2, U2 et U3 changent d'empreinte. U3 et J7 arrivent aussi, puisqu'ils manquaient dans le `_bu`, ainsi que S5 et S6.
 2. **Mesure ton module XL4016** : dimensions, entraxe des trous, position des borniers IN/OUT. L'empreinte suppose ~65 × 47 mm avec IN à gauche et OUT à droite. Place ensuite H1–H4 et H5–H8 sur les trous réels.
 3. **Agrandis la carte** : les deux modules font chacun ~65 × 47 mm et 22–27 mm de haut.
 4. **Placement** :
    - J1 → Q2 → D2/C1 au plus court ;
-   - F1/D3/C2 près de S1–S4, F2/D4/C3 près de J7 ;
-   - R3–R6 près du Mega ;
+   - S5/S6 dans la rangée de S1–S4 ;
+   - F1/D3/C2 près de S1–S6, F2/D4/C3 près de J7 ;
+   - R3–R6, R8, R9 près du Mega ;
    - Q1/R1/R2 peuvent rester sous le Mega.
 5. **Routage** :
    - 12 V de J1 jusqu'à l'embranchement : zone ou piste d'au moins 6 mm (≈11 A en pointe, 1 oz) ;
-   - 6 V : au moins 3,5 mm ou une zone ;
+   - 6 V : au moins 3,5 mm ou une zone, jusqu'au bout de la rangée S1–S6 ;
    - 5V_AUX : au moins 1,5 mm ;
    - grande surface de cuivre sous la languette de Q2 ;
    - TVS et condos collés sur leur nœud, avec un GND court et plusieurs vias vers le plan ;
@@ -54,9 +62,11 @@ Pour réutiliser ton propre dossier de projet, copie le `.kicad_sch` et `JDG_Pro
 1. Alimente le module en 12 V, sans charge. Règle le pot **CV** au multimètre : **6,0 V** pour U2, **5,0 V** pour U3.
 2. Règle le pot **CC** en court-circuitant brièvement la sortie à travers le multimètre (calibre 10 A) : **~8 A** pour U2, **~2,5 A** pour U3. Le 2,5 A reste sous le fusible F2 de 3 A : une surcharge est limitée par le module, et F2 ne saute que si le module lâche.
 
+Avec 6 servos standard (~2,5 A chacun en blocage), le rail 6 V plafonne à ~8 A : si plus de 3 servos forcent en même temps, le module limite le courant et la tension baisse. F1 (10 A) ne saute pas dans ce cas, il protège seulement contre une panne du module.
+
 ## Commande JLCPCB
 
-- **BOM** : `BOM_JLCPCB_CMS.csv` (13 lignes, 16 pièces).
+- **BOM** : `BOM_JLCPCB_CMS.csv` (13 lignes, 18 pièces).
 - **CPL** : à générer depuis le PCB une fois le placement fait (Fichier → Fabrication → Fichier de position, en CSV, face avant). Le plugin Fabrication Toolkit lit aussi les champs `LCSC` du schéma.
 - **Avant de commander** : vérifie le stock de chaque numéro LCSC. Les pièces « Extended » ajoutent des frais par référence. MMBT3904 (C20526) et les résistances UNI-ROYAL sont des pièces courantes.
 - Les pièces traversantes (THT) sont à souder à la main : voir la liste ci-dessous.
@@ -69,6 +79,7 @@ Pour réutiliser ton propre dossier de projet, copie le `.kicad_sch` et `JDG_Pro
 |---|---|---|
 | J1 | XT60PW-M (Amass), mâle, PCB horizontal | 1 |
 | F1, F2 | Porte-fusible mini-lame Keystone 3568 | 2 |
+| S5, S6 | Embase femelle 1×3 2,54 mm Samtec SSW-103-01-F-D (comme S1–S4) | 2 |
 | — | Fusibles mini-lame 10 A (F1) et 3 A (F2), avec rechanges | 2 + 2 |
 | U2, U3 | Modules XL4016 8 A (+1 de rechange) | 3 |
 | H1–H8 | Entretoises M3 10 mm + vis M3 × 6 | 8 + 16 |
