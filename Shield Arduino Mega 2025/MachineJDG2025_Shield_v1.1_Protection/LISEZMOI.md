@@ -7,7 +7,7 @@ Révision du schéma `MachineJDG2025_MEGA2560_Shield_VL_2024_12_19` (KiCad 10). 
 | Bloc | Changement |
 |---|---|
 | Entrée 12 V | J1 devient un **XT60PW-M** (broche 1 = −, broche 2 = +). Il est suivi de **Q2 AOD4185** (anti-inversion : D côté batterie, S côté 12V), de **D1 BZT52C15** + **R7 47k** sur la grille, de la **TVS D2 SMBJ14A** et de **C1 470 µF 35 V**. Le fusible de 15 A est en ligne sur le fil de batterie, hors PCB. |
-| Régulateurs | U2 et U3 deviennent des **modules XL4005 5 A** (carte 43 × 21 mm type DSN5000, même format que le module LM2596), **soudés à plat** sur le PCB (empreinte `JDG_Protection:XL4005_Module_Flat`). Leurs sorties portent maintenant `6V_MOD` et `5V_AUX_MOD`. |
+| Régulateurs | U2 et U3 sont des **modules buck 43 × 21 mm soudés à plat** sur le PCB (empreinte `JDG_Protection:XL4005_Module_Flat`) : **XL4005 5 A** (DSN5000) ou **LM2596 3 A** (DSN2596), au choix. Leurs sorties portent maintenant `6V_MOD` et `5V_AUX_MOD`. |
 | Rail servos 6 V | U2 → **F1** (porte-fusible mini-lame, fusible de 7,5 A) → `6V`, avec **D3 SMBJ6.5A** et **C2 1000 µF 10 V**. |
 | Sortie 5V_AUX | U3 → **F2** (fusible de 3 A) → `5V_AUX` → J7, avec **D4 SMBJ5.0A** et **C3 470 µF 10 V**. |
 | Inverseur SBUS | Q1 devient un **MMBT3904 SOT-23** (nouveau symbole, brochage 1 = B, 2 = E, 3 = C). R1 et R2 passent en **0805**. |
@@ -39,7 +39,7 @@ Pour réutiliser ton propre dossier de projet, copie le `.kicad_sch` et `JDG_Pro
 ## Mettre à jour le PCB (à faire par toi)
 
 1. **F8** (Mettre à jour le PCB depuis le schéma). Coche l'option qui remplace les empreintes par celles des symboles (*Replace footprints with those specified by symbols*). J1, Q1, R1, R2, U2 et U3 changent d'empreinte. U3 et J7 arrivent aussi, puisqu'ils manquaient dans le `_bu`, ainsi que S5 et S6.
-2. **Vérifie ton module XL4005** : il doit être la version 43 × 21 mm, avec des pastilles IN+/IN− d'un côté et OUT+/OUT− de l'autre, à **40 × 17,5 mm d'entraxe** (comme ton LM2596). L'empreinte reprend exactement l'origine et les pastilles de ton ancienne empreinte LM2596 : U2 retombe donc sur ses pastilles actuelles.
+2. **Vérifie ton module (XL4005 ou LM2596)** : il doit être la version 43 × 21 mm, avec des pastilles IN+/IN− d'un côté et OUT+/OUT− de l'autre, à **40 × 17,5 mm d'entraxe** (comme ton LM2596). L'empreinte reprend exactement l'origine et les pastilles de ton ancienne empreinte LM2596 : U2 retombe donc sur ses pastilles actuelles.
 3. **Agrandis la carte** juste ce qu'il faut pour U3 (43 × 21 mm, absent du `_bu`), le bloc de protection 12 V, F1/F2, S5/S6 et le XT60.
 4. **Placement** :
    - J1 → Q2 → D2/C1 au plus court ;
@@ -57,14 +57,23 @@ Pour réutiliser ton propre dossier de projet, copie le `.kicad_sch` et `JDG_Pro
    - plan GND continu entre J1, les modules et les servos.
 6. **DRC**, puis génère les Gerbers.
 
-## Montage et réglage des XL4005
+## Montage et réglage des modules
 
-1. **Avant de souder**, alimente le module en 12 V sans charge et règle son pot au multimètre : **6,0 V** pour U2, **5,0 V** pour U3. Marque-les pour ne pas les inverser.
-2. **Pattes** : passe un bout de **fil de cuivre rigide de 1,0 mm (18 AWG)** dans chaque pastille du module et du PCB. Les broches de header standard (0,64 mm, ~3 A) sont trop minces pour 5 A.
-3. Garde le module à **~3 mm au-dessus du PCB** (une cale de 3 mm pendant la soudure), soude les 4 pattes des deux côtés et coupe l'excédent.
-4. Revérifie la tension à vide sur le shield avant de brancher les servos. Le pot reste accessible par le dessus pour les retouches.
+| | XL4005 | LM2596 |
+|---|---|---|
+| Courant max | ~5 A | ~3 A (≈2 A en continu sans dissipateur) |
+| Tension d'entrée max | 32 V | 40 V |
+| Conseillé pour | U2 (servos) et U3 | U3 seulement, si 5V_AUX reste sous ~2 A |
 
-Le XL4005 n'a pas de réglage de limite de courant : il a une limite interne, une protection contre les courts-circuits et un arrêt thermique. Avec 6 servos standard (~2,5 A chacun en blocage), le rail 6 V plafonne vers 5 A : si plus de 2 servos forcent en même temps, la tension baisse. F1 (7,5 A, fusible lent) laisse passer les pointes normales et sert surtout à couper si le module lâche et envoie le 12 V sur le rail (la TVS D3 conduit et F1 saute). Sur 5V_AUX, F2 (3 A) saute aussi sur un court-circuit franc prolongé : garde les charges sous ~2,3 A en continu.
+Les deux tiennent le 12 V protégé (la TVS D2 limite les pics à 23 V), et F1 (7,5 A) et F2 (3 A) restent bons dans les deux cas.
+
+1. **Aligne le IN+ imprimé sur le module avec le IN+ de la sérigraphie du PCB.** L'ordre des pastilles n'est pas le même sur tous les clones, et un module branché à l'envers grille (le XL4005 n'a pas de protection contre l'inversion).
+2. **Avant de souder**, alimente le module en 12 V sans charge et règle son pot au multimètre : **6,0 V** pour U2, **5,0 V** pour U3. Marque-les pour ne pas les inverser.
+3. **Pattes** : le PCB est percé à 1,3 mm. Passe dans chaque pastille le plus gros **fil de cuivre rigide** qui entre dans les trous du module : **1,0 mm (18 AWG)** si possible, sinon 0,8 mm (20 AWG). Les broches de header standard (0,64 mm, ~3 A) sont trop minces pour 5 A, mais suffisent pour un LM2596.
+4. Garde le module à **~3 mm au-dessus du PCB** (une cale de 3 mm pendant la soudure), soude les 4 pattes des deux côtés et coupe l'excédent.
+5. Revérifie la tension à vide sur le shield avant de brancher les servos. Le pot reste accessible par le dessus pour les retouches.
+
+Ni le XL4005 ni le LM2596 n'ont de réglage de limite de courant, mais les deux ont une limite interne, une protection contre les courts-circuits et un arrêt thermique. Avec 6 servos standard (~2,5 A chacun en blocage) et un XL4005 sur U2, le rail 6 V plafonne vers 5 A : si plus de 2 servos forcent en même temps, la tension baisse. F1 (7,5 A, fusible lent) laisse passer les pointes normales et sert surtout à couper si le module lâche et envoie le 12 V sur le rail (la TVS D3 conduit et F1 saute). Sur 5V_AUX, F2 (3 A) saute aussi sur un court-circuit franc prolongé : garde les charges sous ~2,3 A en continu.
 
 ## Commande JLCPCB
 
@@ -83,13 +92,13 @@ Le XL4005 n'a pas de réglage de limite de courant : il a une limite interne, un
 | F1, F2 | Porte-fusible mini-lame Keystone 3568 | 2 |
 | S5, S6 | Embase femelle 1×3 2,54 mm Samtec SSW-103-01-F-D (comme S1–S4) | 2 |
 | — | Fusibles mini-lame 7,5 A (F1) et 3 A (F2), avec rechanges | 2 + 2 |
-| U2, U3 | Modules XL4005 5 A, carte 43 × 21 mm type DSN5000 (+1 de rechange) | 3 |
-| — | Fil de cuivre étamé rigide 1,0 mm (18 AWG) pour les pattes des modules | ~15 cm |
+| U2, U3 | Modules XL4005 5 A, carte 43 × 21 mm type DSN5000 (+1 de rechange). Un LM2596 43 × 21 mm convient aussi pour U3 | 3 |
+| — | Fil de cuivre étamé rigide 0,8 à 1,0 mm (20–18 AWG) pour les pattes des modules | ~15 cm |
 | — | Porte-fusible mini-lame en ligne + fusible 15 A (fil batterie) | 1 |
 
 **Pièces conservées :** J2–J5, J6, S1–S4, J7 et U1 (Mega).
 
-**Pièces retirées :** bornier Würth de J1, R1/R2 axiales, 2N2222A, modules LM2596 (remplacés par les XL4005, même format).
+**Pièces retirées :** bornier Würth de J1, R1/R2 axiales, 2N2222A, modules LM2596 sur U2 (remplacés par un XL4005, même format et mêmes pastilles).
 
 ## ERC
 

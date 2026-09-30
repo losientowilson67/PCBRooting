@@ -10512,7 +10512,7 @@
 				)
 			)
 		)
-		(property "Value" "XL4005"
+		(property "Value" "XL4005 / LM2596 (43x21)"
 			(at 162.56 26.67 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10544,7 +10544,7 @@
 				)
 			)
 		)
-		(property "Description" "Module buck XL4005 5 A (carte 43 x 21 mm type DSN5000), soudé à plat sur 4 pattes"
+		(property "Description" "Module buck 43 x 21 mm soudé à plat sur 4 pattes : XL4005 5 A (DSN5000) ou LM2596 3 A (DSN2596)"
 			(at 163.83 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -10933,7 +10933,7 @@
 				)
 			)
 		)
-		(property "Value" "XL4005"
+		(property "Value" "XL4005 / LM2596 (43x21)"
 			(at 162.56 44.45 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10965,7 +10965,7 @@
 				)
 			)
 		)
-		(property "Description" "Module buck XL4005 5 A (carte 43 x 21 mm type DSN5000), soudé à plat sur 4 pattes"
+		(property "Description" "Module buck 43 x 21 mm soudé à plat sur 4 pattes : XL4005 5 A (DSN5000) ou LM2596 3 A (DSN2596)"
 			(at 163.83 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -13067,7 +13067,7 @@
 			)
 		)
 	)
-	(text "U2, U3 = modules XL4005 5 A (43 x 21 mm) soudés"
+	(text "U2, U3 = XL4005 (5 A) ou LM2596 (3 A), 43 x 21 mm,"
 		(exclude_from_sim no)
 		(at 140.97 60.96 0)
 		(effects
@@ -13078,7 +13078,7 @@
 		)
 		(uuid "561829c5-7232-5ab7-9456-85f867300633")
 	)
-	(text "à plat sur 4 pattes en fil de cuivre 1 mm"
+	(text "soudés à plat sur 4 pattes en fil de cuivre"
 		(exclude_from_sim no)
 		(at 140.97 63.5 0)
 		(effects

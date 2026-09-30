@@ -3,8 +3,8 @@
 	(generator "pcbnew")
 	(generator_version "10.0")
 	(layer "F.Cu")
-	(descr "Module buck XL4005 5 A, carte 43 x 21 mm (type DSN5000, même format que le module LM2596), soudé à plat sur 4 pattes en fil de cuivre 1 mm. Entraxe des pastilles 40 x 17,5 mm : vérifier sur le module avant de fabriquer. Aucun composant sous le module.")
-	(tags "XL4005 DSN5000 buck module DC-DC")
+	(descr "Module buck 43 x 21 mm : XL4005 5 A (DSN5000) ou LM2596 3 A (DSN2596), soudé à plat sur 4 pattes en fil de cuivre de 0,8 à 1 mm. Entraxe des pastilles 40 x 17,5 mm : vérifier sur le module avant de fabriquer. Aucun composant sous le module.")
+	(tags "XL4005 LM2596 DSN5000 DSN2596 buck module DC-DC")
 	(property "Reference" "REF**"
 		(at 1 -12.05 0)
 		(layer "F.SilkS")
@@ -40,7 +40,7 @@
 			)
 		)
 	)
-	(property "Description" "Module XL4005 soudé à plat"
+	(property "Description" "Module XL4005 ou LM2596 soudé à plat"
 		(at 0 0 0)
 		(unlocked yes)
 		(layer "F.Fab")
@@ -175,7 +175,7 @@
 		(layer "F.CrtYd")
 		(uuid "7c1623be-e23b-5974-be42-2e4cbc83aebf")
 	)
-	(fp_text user "XL4005 43 x 21 (DSN5000)"
+	(fp_text user "XL4005 / LM2596 43 x 21"
 		(at 1 -2.25 0)
 		(layer "F.Fab")
 		(uuid "e80a4622-0fdb-5630-a8bd-322b05a123ff")
