@@ -1,0 +1,260 @@
+(footprint "XL4005_DC-DC"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Module buck XL4005 5 A (carte 43,2 x 20,8 mm, 2 trous M3 en diagonale). Empreinte d'origine KiCad-master/library/Module/XL4005, convertie au format KiCad 10 ; seule la courtyard a été ajoutée. Entraxe des pastilles 39,5 x 17,15 mm.")
+	(tags "XL4005 LM2596 buck module DC-DC DSN5000")
+	(property "Reference" "REF**"
+		(at 2.54 3.81 0)
+		(layer "F.SilkS")
+		(uuid "d6ca510a-3b6b-4b65-8faf-3db2203cdc05")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "XL4005_DC-DC"
+		(at 6.35 1.27 0)
+		(layer "F.Fab")
+		(uuid "2db20c37-2610-452b-bb74-079c9174f8da")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3a7b5f96-eb7a-43b3-bc85-0bd073a1ab8f")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b5ba0ed8-297e-402b-93ea-b0ebc540a796")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start 0 -20.828)
+		(end 43.18 -20.828)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "0cef7169-2185-4349-b4a1-0ab9937ca8d3")
+	)
+	(fp_line
+		(start 0 0)
+		(end 0 -20.828)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "caed76f1-53db-462c-b058-d3f162c2eb42")
+	)
+	(fp_line
+		(start 43.18 -20.828)
+		(end 43.18 0)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "dacb0816-dbce-4d2a-987d-dff44c204ba0")
+	)
+	(fp_line
+		(start 43.18 0)
+		(end 0 0)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "75ad2c2d-7fa2-4849-9bf2-264b6c248027")
+	)
+	(fp_text user "IN+"
+		(at 1.905 -16.51 0)
+		(layer "F.SilkS")
+		(uuid "9c1e73fb-203c-4f0c-9f73-0650660955d5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "IN-"
+		(at 1.905 -4.318 0)
+		(layer "F.SilkS")
+		(uuid "a13c0735-8f03-4aab-a1ce-ae7175b95deb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "Input: DC 5V-38V"
+		(at 11.43 -12.192 0)
+		(layer "F.SilkS")
+		(uuid "bbd3f63f-6ce0-44c0-8925-6314e60b54eb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "Output: DC 1.25V-36V (adj.) | max. 5A/75W"
+		(at 21.844 -10.414 0)
+		(layer "F.SilkS")
+		(uuid "cb1ddd7c-43c2-45cf-a35c-f2c08f3b76a9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "Better under 4.5A - If > 50W need heatsink"
+		(at 21.844 -8.636 0)
+		(layer "F.SilkS")
+		(uuid "f46e8c44-e9af-4856-9770-ad4b7cd1b26f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "OUT+"
+		(at 41.148 -16.51 0)
+		(layer "F.SilkS")
+		(uuid "f32fc032-aea6-44c9-a1a4-2d08ca5c28ac")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "OUT-"
+		(at 41.148 -4.318 0)
+		(layer "F.SilkS")
+		(uuid "46268c8d-f8b4-4d5f-a4fa-80168c3acb45")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_line
+		(start -0.5 0.5)
+		(end 43.68 0.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "42760334-9ab7-5924-bbd8-386d59162a2f")
+	)
+	(fp_line
+		(start 43.68 0.5)
+		(end 43.68 -21.33)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "28321e09-553c-55df-bd27-d7e78f7f7b5b")
+	)
+	(fp_line
+		(start 43.68 -21.33)
+		(end -0.5 -21.33)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "7cf15dbb-f4b8-5796-93a6-28951ed601e1")
+	)
+	(fp_line
+		(start -0.5 -21.33)
+		(end -0.5 0.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "9caf59ee-e67c-52cb-9f31-0a74e2e09555")
+	)
+	(pad "" thru_hole circle
+		(at 6.604 -18.288)
+		(size 4.048 4.048)
+		(drill 3.048)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "7a2ab058-292d-4bf7-a684-7af2ec5dbd8e")
+	)
+	(pad "" thru_hole circle
+		(at 36.576 -2.54)
+		(size 4.048 4.048)
+		(drill 3.048)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6d07bbdd-d5ec-4626-b604-f50213834528")
+	)
+	(pad "1" thru_hole rect
+		(at 1.8415 -18.9865)
+		(size 3 3)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6c2b5c4c-21d6-41f0-84d1-ab579367c66b")
+	)
+	(pad "2" thru_hole rect
+		(at 1.8415 -1.8415)
+		(size 3 3)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "738200b1-4d21-43d7-8a5b-16f9f341d308")
+	)
+	(pad "3" thru_hole rect
+		(at 41.3385 -18.9865)
+		(size 3 3)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "3c2af603-8230-47c6-bdcb-ecb2e146341f")
+	)
+	(pad "4" thru_hole rect
+		(at 41.3385 -1.8415)
+		(size 3 3)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "427cbcd5-958d-4131-9fe4-38e3fe335484")
+	)
+	(embedded_fonts no)
+)

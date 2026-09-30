@@ -6,5 +6,6 @@ S5 S6,Embase femelle 1x3 2.54 mm Samtec SSW-103-01-F-D (comme S1-S4),2,PCB,Servo
 -,Fusible mini-lame (ATM) 7.5 A,2,Dans F1,1 installe + 1 de rechange
 -,Fusible mini-lame (ATM) 3 A,2,Dans F2,1 installe + 1 de rechange
 U2 U3,Module buck XL4005 5 A carte 43 x 21 mm (type DSN5000; pot multitours),3,Soude a plat sur le PCB,"2 installes + 1 de rechange. Un LM2596 43 x 21 mm convient aussi pour U3. Verifier l'entraxe : 40 x 17,5 mm"
--,Fil de cuivre etame rigide 0.8 a 1.0 mm (20-18 AWG),~15 cm,Pattes de U2 et U3 (4 par module),Module a ~3 mm au-dessus du PCB; aucun composant dessous
+-,Fil de cuivre etame rigide 0.8 mm (20 AWG); 1.0 mm max,~15 cm,Pattes de U2 et U3 (4 par module),Percage 1.2 mm; aucun composant sous le module
+-,Vis M3 x 8 nylon + entretoise nylon 3 mm + ecrou,4 + 4 + 4,Trous en diagonale de U2 et U3 (2 par module),Regle la hauteur a ~3 mm et tient le module
 -,Porte-fusible mini-lame en ligne (etanche) 14 AWG + fusible 15 A,1,Fil + de la batterie,Hors PCB
