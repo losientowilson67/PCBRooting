@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "JDG_Protection")(type "KiCad")(uri "${KIPRJMOD}/JDG_Protection.pretty")(options "")(descr "Empreintes projet JDG2025 v1.1 (module XL4005 soudé à plat)"))
+)
