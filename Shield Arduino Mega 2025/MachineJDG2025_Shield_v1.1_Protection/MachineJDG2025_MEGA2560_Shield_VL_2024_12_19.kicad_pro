@@ -598,10 +598,6 @@
     "netclass_patterns": [
       {
         "netclass": "Puissance_12V",
-        "pattern": "*BAT+"
-      },
-      {
-        "netclass": "Puissance_12V",
         "pattern": "12V"
       },
       {
@@ -609,16 +605,8 @@
         "pattern": "6V"
       },
       {
-        "netclass": "Rail_6V",
-        "pattern": "6V_MOD"
-      },
-      {
         "netclass": "Rail_5V_AUX",
         "pattern": "5V_AUX"
-      },
-      {
-        "netclass": "Rail_5V_AUX",
-        "pattern": "5V_AUX_MOD"
       }
     ]
   },
